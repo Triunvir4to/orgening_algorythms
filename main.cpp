@@ -4,15 +4,13 @@
 using namespace std;
 
 void bruteForceOrdening(vector<int> &values) {
-    for (int i = 0; i < values.size(); ++i) {
-        for (int j = 1 + i; j < values.size(); ++j) {
+    for (int i = 0; i < values.size(); ++i)
+        for (int j = 1 + i; j < values.size(); ++j)
             if (values[i] > values[j]) {
                 int tmp = values[i];
                 values[i] = values[j];
                 values[j] = tmp;
             }
-        }
-    }
 }
 
 int main() {
