@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void bruteForceOrdening(vector<int> &values) {
+void selectionSort(vector<int> &values) {
     for (int i = 0; i < values.size(); ++i)
         for (int j = 1 + i; j < values.size(); ++j)
             if (values[i] > values[j]) {
