@@ -1,3 +1,0 @@
-/home/rafa/projetos/maratona/teorico/order_alg/cmake-build-debug/CMakeFiles/order_alg.dir
-/home/rafa/projetos/maratona/teorico/order_alg/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/rafa/projetos/maratona/teorico/order_alg/cmake-build-debug/CMakeFiles/rebuild_cache.dir
