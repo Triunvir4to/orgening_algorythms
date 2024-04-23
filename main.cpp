@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 using namespace std;
 
@@ -13,6 +14,21 @@ void bruteForceOrdening(vector<int> &values) {
             }
 }
 
+void bubbleSort(vector<int> &value) {
+    for (int i = value.size() - 1; i > 0; --i) {
+        bool ordened = true;
+        for (int j = 0; j < i; ++j) {
+            if (value[j] > value[j + 1]) {
+                int aux = value[j];
+                value[j] = value[j + 1];
+                value[j + 1] = aux;
+                ordened = false;
+            }
+        }
+        if (ordened)break;
+    }
+}
+
 int main() {
     vector<int> values = {
             20, 40, 17, 5,
@@ -21,15 +37,24 @@ int main() {
             19, 7, 27
     };
 
-    for (const int a: values)
-        cout << a << " ";
+    auto start = chrono::high_resolution_clock::now();
 
-    bruteForceOrdening(values);
+    for (const int value: values)
+        cout << value << " ";
+
+    bubbleSort(values);
 
     cout << endl;
 
-    for (const int a: values)
-        cout << a << " ";
+    for (const int value: values)
+        cout << value << " ";
+
+    cout << endl;
+
+    auto stop = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
+
+    cout << "Time taken by function: " << duration.count() << " milliseconds" << endl;
 
     return 0;
 }
